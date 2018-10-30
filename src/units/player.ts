@@ -54,6 +54,10 @@ class Player extends Physics.Arcade.Sprite {
     }
     if (input.get("use").isDown) {
     }
+    // if (this.x < 50 && this.y > 500) {
+    //   this.x = 20;
+    //   this.y = 0;
+    // }
   }
 }
 
