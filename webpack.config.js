@@ -1,6 +1,5 @@
 const path = require("path");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   entry: "./src/main.ts",
@@ -18,17 +17,8 @@ module.exports = {
       }
     ]
   },
-  watch: true,
   resolve: {
     extensions: [".ts", ".js"]
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new UglifyJsPlugin({
-        include: /\.min\.js$/
-      })
-    ]
   },
   plugins: [
     new BrowserSyncPlugin({
@@ -38,5 +28,7 @@ module.exports = {
         baseDir: ["./", "./dist"]
       }
     })
-  ]
+  ],
+  watch: true,
+  devtool: "source-map"
 };
